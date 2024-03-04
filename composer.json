@@ -1,0 +1,17 @@
+{
+    "name": "dammynex/data-class",
+    "description": "Data Class",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Dammynex\\DataClass\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Damilola",
+            "email": "damilolaofficial@gmail.com"
+        }
+    ],
+    "require": {}
+}
