@@ -15,6 +15,12 @@ abstract class DataClass implements DataClassInterface
     public function getData(): array
     {
         $data = array();
+        $properties = self::getProperties();
+
+        array_walk($properties, function ($prop_name) use (&$data) {
+            $data[$prop_name] = $this->{$prop_name}->value;
+        });
+
         return $data;
     }
 
