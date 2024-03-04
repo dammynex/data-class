@@ -18,7 +18,7 @@ abstract class DataClass implements DataClassInterface
         $properties = self::getProperties();
 
         array_walk($properties, function ($prop_name) use (&$data) {
-            $data[$prop_name] = $this->{$prop_name}->value;
+            $data[$prop_name] = $this->{$prop_name}?->value;
         });
 
         return $data;
@@ -38,7 +38,7 @@ abstract class DataClass implements DataClassInterface
             $property = $this->{$prop_name};
 
             if (!$property->is_private) {
-                $metadata[$prop_name] = $property->value;
+                $metadata[$prop_name] = $property?->value;
             }
         });
 
